@@ -1,0 +1,82 @@
+.app-list-item {
+   font-size: 1.25rem;
+}
+
+.app-list-item button {
+   width: 35px;
+   height: 35px;
+   margin: 3px;
+   font-size: 17px;
+   border: none;
+   cursor: pointer;
+}
+
+.app-list-item button:focus {
+   box-shadow: none;
+   outline: none;
+}
+
+.btn-star {
+   color: #bdbdbd;
+}
+
+.btn-trash {
+   color: red;
+}
+
+.fa-check {
+   margin-right: 5px;
+   width: 35px;
+   height: 35px;
+   text-align: center;
+   line-height: 35px;
+   font-size: 16px;
+   color: #02a702;
+   transition: 0.3s all;
+   transform: translateX(-20px);
+   opacity: 0;
+}
+
+.app-list-item-label {
+   position: relative;
+   display: block;
+   line-height: 35px;
+   cursor: pointer;
+   user-select: none;
+   transition: 0.5s all;
+
+   &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -3%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #bdbdbd;
+      transition: all 0.2s ease-in;
+   }
+}
+
+
+.app-list-item.important .app-list-item-label {
+   color: #FFD700;
+}
+
+.app-list-item.important .btn-star {
+   color: #FFD700;
+}
+
+.app-list-item.completed .fa-check {
+   opacity: 1;
+   transform: translateX(0px);
+}
+
+.app-list-item.completed .app-list-item-label {
+   color: #bdbdbd;
+}
+
+.app-list-item.completed .app-list-item-label::after {
+   width: 106%;
+}
