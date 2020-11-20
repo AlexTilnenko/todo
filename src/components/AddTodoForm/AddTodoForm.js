@@ -31,7 +31,7 @@ export default class PostAddForm extends Component {
          <form className="bottom-panel d-flex" onSubmit={this.onSubmit}>
             <input
                type="text"
-               placeholder="Добавьте новое задание!"
+               placeholder="Добавьте новоую задачу..."
                className="form-control new-post-label"
                onChange={this.onValueChange}
                value={this.state.text}

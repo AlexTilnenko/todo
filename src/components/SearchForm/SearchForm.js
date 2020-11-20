@@ -21,7 +21,7 @@ export default class SearchForm extends Component {
          <input
             className="form-control search-input"
             type="text"
-            placeholder="Поиск по заданиям"
+            placeholder="Поиск по задачам"
             onChange={this.onUpdateSearch}
          />
       );

@@ -32,6 +32,15 @@ export default class App extends Component {
       this.hideError = this.hideError.bind(this);
    }
 
+   componentDidMount() {
+      const savedTodos = JSON.parse(localStorage.getItem('data') || '[]');
+      this.setState({ data: savedTodos });
+   }
+
+   componentDidUpdate() {
+      localStorage.setItem('data', JSON.stringify(this.state.data));
+   }
+
    deleteItem(id) {
       this.setState(({ data }) => {
          const index = data.findIndex((elem) => elem.id === id);
@@ -48,7 +57,7 @@ export default class App extends Component {
          const newItem = {
             label: body,
             important: false,
-            id: Date.now,
+            id: Date.now(),
          };
          this.setState(({ data }) => {
             const newArr = [...data, newItem];
@@ -150,9 +159,9 @@ export default class App extends Component {
                onDelete={this.deleteItem}
                onToggleImportant={this.onToggleImportant}
                onToggleCompleted={this.onToggleCompleted}
-               />
+            />
             <AddTodoForm onAdd={this.addItem} />
-               {visibleError === true && <Error />}
+            {visibleError === true && <Error />}
          </div>
       );
    }
