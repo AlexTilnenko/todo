@@ -1,3 +1,10 @@
+# Список задач
+Есть функции поиска, фильтрации, выделения важных задач.
+Задачи хранятся в LocalStorage.
+
+Ссылка на деплой: https://alextilnenko.github.io/todo
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
